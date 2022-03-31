@@ -3,22 +3,25 @@
 <head>
     <meta charset="UTF-8" lang="ru">
     <link href="style.css" rel="stylesheet">
-    <title>Title</title>
+    <title>z</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body class="grid-container">
-    <header class="header">
+    <header class="header_logo">
         <img src="logo-tp.svg">
     </header>
 
-    <main class="main">
+    <main class="main_grid">
         <div class="not-search-box search">
-            <img class="union" src="Union.png">
-
-            <input class="input"  placeholder="Поиск фильмов по жанрам и актерам">
-            <img style="float: right" class="close_search pointer" src="Vector.png">
-            <hr  class="hrr" />
+            <input
+                    class="search__input"
+                    type="search"
+                    name="search"
+                    placeholder="Поиск фильмов по жанрам и актерам"
+                    autocomplete="off"
+                    required
+            />
             <div class="not_history">
 
                 <div class="films">

@@ -7,7 +7,7 @@
     grid-template-areas: "header" "main" "footer";
 }
 
-.header {
+.header_logo {
     grid-area: header;
     width: 148px;
     height: 28px;
@@ -16,10 +16,10 @@
     position: absolute;
 }
 
-.main {
+.main_grid {
     grid-area: main;
     display: grid;
-    grid-template-rows: 240px 48px auto;
+    /*grid-template-rows: 240px 48px auto;*/
     grid-template-columns: 1280px;
     grid-template-areas:
         "search-box"
@@ -28,40 +28,58 @@
     margin: 0 80px;
     position: relative;
     margin-top: 57px;
+    /*position: absolute;*/
+    padding: 18px 63px 20px 350px;
+    /*margin: 0 -80px;*/
+    display: block;
 }
 
-.not-search-box {
+.search_box_off {
     display: none;
     grid-area: search-box;
     position: relative;
 }
 
-/*Строка ввода*/
 
-.input {
-    background: #1C1C1C;
-    color: rgba(255, 255, 255, 0.4);
-    border: none;
-    outline: none;
-    width: 446px;
-    height: 36px;
-    left: 525px;
-    top: 180px;
-    padding-top: 0px;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 24px;
-    line-height: 36px;
-}
 
-.hrr {
-    height:2px;
-    border:none;
-    color:white;
+.search__input {
     width: 628px;
-    background-color:white;
+    height: 36px;
+    /*margin-top: 54px;*/
+    padding: 18px 53px 20px 60px;
+    background: url("magnifierIcon.png");
+    background-repeat: no-repeat;
+    background-position: center left;
+    background-color: #1c1c1c;
+    border: none;
+    border-bottom: 2px solid #fdce25;
+    border-radius: 2px;
+    outline: none;
+    caret-color: #ffffff;
+    color: #ffffff;
+
+    font-size: 1.5rem;
+    font-weight: 300;
+
+    transition: 0.5s ease-in-out;
 }
+
+.search__input::placeholder {
+    line-height: 36px;
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.search__input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    content: url('closeIcon.png');
+    cursor: pointer;
+}
+
+.search__input::-webkit-search-cancel-button:hover {
+    content: url('close_light.png');
+}
+
 
 .search-active > div hr {
     height:2px;
@@ -72,12 +90,12 @@
 }
 
 
-.search {
-    position: absolute;
-    padding: 18px 63px 20px 410px;
-    margin: 0 -80px;
-    display: block;
-    }
+/*.search {*/
+/*    position: absolute;*/
+/*    padding: 18px 63px 20px 410px;*/
+/*    margin: 0 -80px;*/
+/*    display: block;*/
+/*    }*/
 
 .union {
     padding: 0px 20px 0px 71px;

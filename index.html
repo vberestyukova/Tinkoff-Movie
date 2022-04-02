@@ -1,212 +1,211 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8" lang="ru">
     <link href="style.css" rel="stylesheet">
-    <title>z</title>
+    <title>Тинькофф прокат</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body class="grid-container">
-    <header class="header_logo">
-        <img src="logo-tp.svg">
-    </header>
+<header  class="header_logo">
+    <img src="logo.svg" alt="logo">
+</header>
 
-    <main class="main_grid">
-        <div class="not-search-box search">
-            <input
-                    class="search__input"
-                    type="search"
-                    name="search"
-                    placeholder="Поиск фильмов по жанрам и актерам"
-                    autocomplete="off"
-                    required
-            />
-            <div class="not_history">
-
-                <div class="films">
-                    Как я встретил вашу маму
-                </div>
-
-                <div class="films">
-                    Гоп-стоп
-                </div>
-
-                <div class="films">
-                    Весенний дрозд
-                </div>
-
-                <div class="not_more_history films1">
-                    Белоснежка и семь гномов
-                </div>
-
-                <div class="not_more_history films1">
-                    Трое в лодке
-                </div>
-
-                <div class="not_more_history films1">
-                    Бандитский петербург
-                </div>
-                <div class="not_more_history films1">
-                    Спящая женщина и принц
-                </div>
-
-                <div class="not_more_history films1">
-                    Война миров
-                </div>
-                <div class="not_more_history films1">
-                    Дикий дикий дикий запад
-                </div>
-            </div>
+<main class="grid grid__search grid__search-active grid__search-active--more-history search_live">
+    <div id="search-box">
+        <input
+                type="search"
+                name="search"
+                placeholder="Поиск фильмов по жанрам и актерам"
+                autocomplete="off"
+                required
+        />
+    </div>
+    <!--    Блок с результатами происка (история)-->
+    <div class="grid__history ">
+        <div class="grid__history-item history--not-active">
+            Как я встретил вашу маму
         </div>
 
-        <div class="no-res">Мы не поняли о чем речь ¯\_(ツ)_/¯</div>
+        <div class="grid__history-item history--not-active">
+            Гоп-стоп
+        </div>
 
-        <div class="not_visible_result">
-            <div class="text-search">Нашли 82 фильма</div>
-            <div class="results-pic">
-                <div class="inform">
-                    <img class="pic" src="Rectangle.png">
+        <div class="grid__history-item history--not-active">
+            Весенний дрозд
+        </div>
+        <div class="grid__history-item more-history--not-active">
+            Белоснежка и семь гномов
+        </div>
 
-                    <div class="info_pic overlay">
-                        <div class="reaction">
-                            <img class="picture_for_icon" src="r05.png">
-                            8,7
-                        </div>
-                        <div class="name_pic">Спасти рядового Райана</div>
-                        <div class="meta_pic">
-                            <div class="genre_pic"> Военный/Боевик </div>
-                            <div class="date">1998</div>
-                        </div>
+        <div class="grid__history-item more-history--not-active">
+            Трое в лодке
+        </div>
+
+        <div class="grid__history-item more-history--not-active">
+            Бандитский петербург
+        </div>
+        <div class="grid__history-item more-history--not-active">
+            Спящая женщина и принц
+        </div>
+
+        <div class="grid__history-item more-history--not-active">
+            Война миров
+        </div>
+        <div class="grid__history-item more-history--not-active">
+            Дикий дикий дикий запад
+        </div>
+    </div>
+    <div class="no-results__inactive">Мы не поняли о чем речь ¯\_(ツ)_/¯</div>
+    <div class="not_visible_result text-result">Нашли 82 фильма</div>
+    <div class="not_visible_result results">
+
+        <div class="results-pic">
+            <div class="information">
+                <img class="pic" src="save_Ryan.png" alt="Спасти рядового Райана">
+                <div class="info_pic overlay">
+                    <div class="reaction">
+                        <img class="picture_for_icon" src="emoji_great.png">
+                        8,7
                     </div>
-                </div>
-
-                <div class="inform">
-                    <img class="pic" src="inferno.png">
-                    <div class="info_pic overlay">
-                        <div class="reaction">
-                            <img class="picture_for_icon" src="r05.png">
-                            8,1
-                        </div>
-                        <div class="name_pic">Инферно</div>
-                        <div class="meta_pic">
-                            <div class="genre_pic">Боевик, триллер</div>
-                            <div class="date">2016</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="inform">
-                    <img class="pic" src="apol.png">
-                    <div class="info_pic overlay">
-                        <div class="reaction">
-                            <img class="picture_for_icon" src="r05.png">
-                            7,7
-                        </div>
-                        <div class="name_pic">Аполлон-13</div>
-                        <div class="meta_pic">
-                            <div class="genre_pic">Драма/История</div>
-                            <div class="date">1995</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="inform">
-                    <img class="pic" src="forest.png">
-                    <div class="info_pic overlay">
-                        <div class="reaction">
-                            <img class="picture_for_icon" src="r05.png">
-                            8,9
-                        </div>
-                        <div class="name_pic">Форрест Гамп</div>
-                        <div class="meta_pic">
-                            <div class="genre_pic">Драма/Романтика</div>
-                            <div class="date">1994</div>
-                        </div>
-                    </div>
-                 </div>
-
-                <div class="item-content">
-                    <div class="info">
-                        <div class="name">Шпионский мост</div>
-                        <div class="meta">
-                            <div>Боевик, триллер</div>
-                            <div class="date">2017</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skeleton">
-                    <div class="two_lines">
-                        <div class="line_long"></div>
-                        <div class="line line_short"></div>
-                    </div>
-                </div>
-
-                <div class="skeleton">
-                    <div class="two_lines">
-                        <div class="line_long"></div>
-                        <div class="line line_short"></div>
-                    </div>
-                </div>
-
-                <div class="skeleton">
-                    <div class="two_lines">
-                        <div class="line_long"></div>
-                        <div class="line line_short"></div>
-                    </div>
-                </div>
-
-                <div class="skeleton">
-                    <div class="two_lines">
-                        <div class="line_long"></div>
-                        <div class="line line_short"></div>
-                    </div>
-                </div>
-
-                <div class="skeleton">
-                    <div class="two_lines">
-                        <div class="line_long"></div>
-                        <div class="line line_short"></div>
-                    </div>
-                </div>
-
-                <div class="skeleton">
-                    <div class="two_lines">
-                        <div class="line_long"></div>
-                        <div class="line line_short"></div>
-                    </div>
-                </div>
-
-                <div class="skeleton">
-                    <div class="two_lines">
-                        <div class="line_long"></div>
-                        <div class="line line_short"></div>
-                    </div>
-                </div>
-
-                <div class="skeleton">
-                    <div class="two_lines">
-                        <div class="line_long"></div>
-                        <div class="line line_short"></div>
-                    </div>
-                </div>
-
-                <div class="skeleton">
-                    <div class="two_lines">
-                        <div class="line_long"></div>
-                        <div class="line line_short"></div>
-                    </div>
-                </div>
-
-                <div class="skeleton">
-                    <div class="two_lines">
-                        <div class="line_long"></div>
-                        <div class="line line_short"></div>
+                    <div class="name_pic">Спасти рядового Райана</div>
+                    <div class="meta_pic">
+                        <div class="genre_pic"> Военный/Боевик </div>
+                        <div class="date">1998</div>
                     </div>
                 </div>
             </div>
+
+            <div class="information">
+                <img class="pic" src="inferno.png" alt="Инферно">
+                <div class="info_pic overlay">
+                    <div class="reaction">
+                        <img class="picture_for_icon" src="emoji_great.png">
+                        8,1
+                    </div>
+                    <div class="name_pic">Инферно</div>
+                    <div class="meta_pic">
+                        <div class="genre_pic">Боевик, триллер</div>
+                        <div class="date">2016</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="information">
+                <img class="pic" src="apollonian_13.png" alt="Аполлон 13">
+                <div class="info_pic overlay">
+                    <div class="reaction">
+                        <img class="picture_for_icon" src="emoji_great.png">
+                        7,7
+                    </div>
+                    <div class="name_pic">Аполлон-13</div>
+                    <div class="meta_pic">
+                        <div class="genre_pic">Драма/История</div>
+                        <div class="date">1995</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="information">
+                <img class="pic" src="forest_gump.png" alt="Форрест Гамп">
+                <div class="info_pic overlay">
+                    <div class="reaction">
+                        <img class="picture_for_icon" src="emoji_great.png">
+                        8,9
+                    </div>
+                    <div class="name_pic">Форрест Гамп</div>
+                    <div class="meta_pic">
+                        <div class="genre_pic">Драма/Романтика</div>
+                        <div class="date">1994</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item-content">
+                <div class="info">
+                    <div class="name">Шпионский мост</div>
+                    <div class="meta">
+                        <div>Боевик, триллер</div>
+                        <div class="date">2017</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skeleton">
+                <div class="two_lines">
+                    <div class="line_long"></div>
+                    <div class="line line_short"></div>
+                </div>
+            </div>
+
+            <div class="skeleton">
+                <div class="two_lines">
+                    <div class="line_long"></div>
+                    <div class="line line_short"></div>
+                </div>
+            </div>
+
+            <div class="skeleton">
+                <div class="two_lines">
+                    <div class="line_long"></div>
+                    <div class="line line_short"></div>
+                </div>
+            </div>
+
+            <div class="skeleton">
+                <div class="two_lines">
+                    <div class="line_long"></div>
+                    <div class="line line_short"></div>
+                </div>
+            </div>
+
+            <div class="skeleton">
+                <div class="two_lines">
+                    <div class="line_long"></div>
+                    <div class="line line_short"></div>
+                </div>
+            </div>
+
+            <div class="skeleton">
+                <div class="two_lines">
+                    <div class="line_long"></div>
+                    <div class="line line_short"></div>
+                </div>
+            </div>
+
+            <!--            <div class="skeleton">-->
+            <!--                <div class="two_lines">-->
+            <!--                    <div class="line_long"></div>-->
+            <!--                    <div class="line line_short"></div>-->
+            <!--                </div>-->
+            <!--            </div>-->
+
+            <!--            <div class="skeleton">-->
+            <!--                <div class="two_lines">-->
+            <!--                    <div class="line_long"></div>-->
+            <!--                    <div class="line line_short"></div>-->
+            <!--                </div>-->
+            <!--            </div>-->
+
+            <!--            <div class="skeleton">-->
+            <!--                <div class="two_lines">-->
+            <!--                    <div class="line_long"></div>-->
+            <!--                    <div class="line line_short"></div>-->
+            <!--                </div>-->
+            <!--            </div>-->
+
+            <!--            <div class="skeleton">-->
+            <!--                <div class="two_lines">-->
+            <!--                    <div class="line_long"></div>-->
+            <!--                    <div class="line line_short"></div>-->
+            <!--                </div>-->
+            <!--            </div>-->
         </div>
-    </main>
-    <footer class="footer"> © 2019 Тинькофф Прокат</footer>
+    </div>
+
+    </div>
+</main>
+<footer class="footer_content"> © 2019 Тинькофф Прокат</footer>
 </body>
 </html>

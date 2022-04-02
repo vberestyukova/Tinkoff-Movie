@@ -1,285 +1,176 @@
+/*разделение на блоки, задан обзий шрифт*/
 .grid-container {
     display: grid;
     min-height: 100vh;
     background: #1C1C1C;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
     grid-template-columns: 1fr;
     grid-template-rows: 108px 1fr auto;
     grid-template-areas: "header" "main" "footer";
 }
 
+/*класс для логотипа*/
 .header_logo {
     grid-area: header;
-    width: 148px;
-    height: 28px;
-    left: 646px;
     top: 80px;
-    position: absolute;
+    text-align: center;
+    position: relative;
 }
 
-.main_grid {
+
+.grid {
     grid-area: main;
-    display: grid;
-    /*grid-template-rows: 240px 48px auto;*/
-    grid-template-columns: 1280px;
-    grid-template-areas:
-        "search-box"
-        "no-results"
-        "results";
-    margin: 0 80px;
     position: relative;
     margin-top: 57px;
-    /*position: absolute;*/
-    padding: 18px 63px 20px 350px;
-    /*margin: 0 -80px;*/
-    display: block;
 }
 
-.search_box_off {
-    display: none;
-    grid-area: search-box;
-    position: relative;
+/*класс для выравнивания по центру строки поиска (не активно)*/
+.grid__search div#search-box {
+    text-align: center;
 }
 
+/*класс для самой строки ввода*/
+.grid__search input{
 
-
-.search__input {
     width: 628px;
     height: 36px;
-    /*margin-top: 54px;*/
     padding: 18px 53px 20px 60px;
-    background: url("magnifierIcon.png");
+    background: url("search_icon.png");
     background-repeat: no-repeat;
     background-position: center left;
     background-color: #1c1c1c;
     border: none;
-    border-bottom: 2px solid #fdce25;
+    border-bottom: 2px solid #ffffff;
     border-radius: 2px;
     outline: none;
     caret-color: #ffffff;
     color: #ffffff;
-
     font-size: 1.5rem;
     font-weight: 300;
-
     transition: 0.5s ease-in-out;
 }
 
-.search__input::placeholder {
+
+.grid__search input::placeholder {
     line-height: 36px;
     font-size: 24px;
     color: rgba(255, 255, 255, 0.4);
 }
 
-.search__input::-webkit-search-cancel-button {
+/*кнопка закрыть*/
+.grid__search input::-webkit-search-cancel-button {
     -webkit-appearance: none;
-    content: url('closeIcon.png');
+    content: url('close.png');
     cursor: pointer;
 }
 
-.search__input::-webkit-search-cancel-button:hover {
+.grid__search input::-webkit-search-cancel-button:hover {
     content: url('close_light.png');
 }
 
-
-.search-active > div hr {
-    height:2px;
-    border:none;
+/*изменение search-box. когда активный режим*/
+.grid__search-active input {
     width: 1280px;
-    color:rgba(253, 206, 37, 1);
-    background-color:rgba(253, 206, 37, 1);
+    border-bottom: 2px solid #fdce25;
+
 }
 
-
-/*.search {*/
-/*    position: absolute;*/
-/*    padding: 18px 63px 20px 410px;*/
-/*    margin: 0 -80px;*/
-/*    display: block;*/
-/*    }*/
-
-.union {
-    padding: 0px 20px 0px 71px;
+.grid__search-active div.history--not-active {
+    display: flex;
 }
 
-/*Выделение крестика и смена курсора*/
-.close_search {
+.grid__search-active--more-history div.more-history--not-active {
+    display: flex;
+}
+
+/*дизайн истории (самих блоков)*/
+.grid__history-item {
+    background: rgba(255, 255, 255, 0.8);
+    position: relative;
+    height: 36px;
+    text-align: center;
+    flex-grow: 0;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 6px 16px 6px;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.8);
+    margin: 8px 8px 0;
+    border-radius: 8px;
+}
+
+/*сетка для истории*/
+.grid__history {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-basis: content;
+    margin: 15px 100px 0;
+}
+
+/*данный класс изначально делает историю невидимой*/
+.more-history--not-active, .history--not-active {
     display: none;
 }
 
-img.pointer:hover {
-    cursor: url("Cursor.png"), pointer;
+.grid__history-item:hover {
+    background: #FFFFFF;
+    cursor: pointer;
 }
 
-img.close_search:hover {
-    background: url(Vector_light.png);
-}
-
-
-.search-active > div.not-search-box {
-    padding: 18px 0 20px 0;
-    margin: 0;
-
-}
-
-
-.scroll >div.not-search-box {
-    display: block;
-    position: sticky;
-    position: sticky;
-    background: rgba(28, 28, 28, 0.8);
-    backdrop-filter: blur(4px);
-    width: 1440px;
-    top:0;
-    z-index: 1;
-    height: 28px;
-}
-.scroll div.not-search-box > div.not_history {
+/*изначально отсутвие результатов невидимо*/
+.no-results__inactive {
     display: none;
 }
 
-.scroll div.not-search-box > hr.hrr {
-    height:2px;
-    border:none;
-    width: 1520px;
-    margin: 0 -80px;
-    color: rgb(255, 255, 255);
-    background-color: rgb(255, 255, 255);
-}
-
-.scroll div.not-search-box > input.input {
-    background: none;
-}
-
-.scroll div.not-search-box > div.not_history {
-    opacity: 0;
-}
-
-
-/*Нет результата*/
-.no-res{
-    grid-area: no-results;
-    display: none;
-}
-
-.search_not_found > div.no-res{
+/*появляется надпись об отсутвии результатов*/
+.grid__no-results div.no-results__inactive {
     display: inline-block;
     grid-area: no-results;
-    font-family: Roboto;
-    font-style: normal;
     font-weight: 900;
     font-size: 36px;
     line-height: 48px;
     color: #FFFFFF;
-    position: relative;
-}
+    margin: 100px 100px 0;
 
-/*История */
-.not_history {
+    /*выключаются результаты из активного класса    */
+}
+.grid__no-results div.history--not-active {
     display: none;
 }
 
-.search-active div.not-search-box > div.not_history{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    flex-basis: content;
-}
-
-.not_more_history {
-    display: none;
-}
-
-.search_more_history div.not-search-box > div.not_history div.not_more_history{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    flex-basis: content;
-}
-
-.films {
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 4px;
-    position: relative;
-    height: 36px;
-    text-align: center;
-    flex-grow: 0;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 24px;
-    padding: 12px 16px 0;
-    align-items: center;
-    color: rgba(0, 0, 0, 0.8);
-    margin: 8px 8px 0;
-    border-radius: 8px;
-}
-
-/*Смена цвета и курсора при наведении*/
-.films:hover {
-    background: #FFFFFF;
-    cursor: url("Cursor.png"), pointer;
-}
-
-.films1:hover {
-    background: #FFFFFF;
-    cursor: url("Cursor.png"), pointer;
-}
-
-.films1  {
-    background: rgba(255, 255, 255, 0.8);
-    padding: 6px 16px 6px;
-    border-radius: 4px;
-    position: relative;
-    height: 36px;
-    text-align: center;
-    flex-grow: 0;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 24px;
-    /*padding: 12px 16px 0;*/
-    align-items: center;
-
-    color: rgba(0, 0, 0, 0.8);
-    margin: 8px 8px 0;
-    border-radius: 8px;
-}
-
-/*Результат*/
+/*результаты с картинками пока невидимы*/
 .not_visible_result {
     display: none;
     grid-area: results;
 }
 
-.search_live > div.not_visible_result{
-    display: grid;
+/*показываем результаты при включении данного класса в main*/
+.search_live div.results{
+    display: block;
+    position: absolute;
+    margin: 184px 100px 0;
     grid-area: results;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
-    grid-template-areas:
-            "text-search"
-            "results-pic";
+
 }
 
-.search_live div.search-box > img.close_search {
-    display: inline;
-}
 
-.text-search {
-    position: relative;
-	top:0px;
-    margin-bottom: 36px;
-    /*margin-bottom: 36px;*/
-    grid-area: text-search;
-    /*background: olivedrab;*/
-    font-family: Roboto;
-    font-style: normal;
+.text-result {
+    display: block;
     font-weight: 900;
+    position: absolute;
     font-size: 36px;
     line-height: 48px;
     color: #FFFFFF;
+    margin: 100px 100px 0;
+}
+
+.results {
+    position: relative;
 }
 
 .results-pic {
@@ -307,7 +198,7 @@ img.close_search:hover {
     border-radius: 12px;
 }
 
-.inform {
+.information {
     display: flex;
     position: relative;
 }
@@ -315,16 +206,13 @@ img.close_search:hover {
 .info_pic {
     display: none;
 }
-div.inform:hover div.info_pic {
+div.information:hover div.info_pic {
     display: block;
 }
 
 .reaction {
     display: flex;
     justify-content: space-between;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
     font-size: 24px;
     line-height: 36px;
     color: rgb(255, 255, 255);
@@ -346,9 +234,6 @@ div.inform:hover div.info_pic {
 .meta_pic {
     display: flex;
     justify-content: space-between;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
     font-size: 16px;
     line-height: 24px;
     color: rgba(255, 255, 255, 0.24);
@@ -358,12 +243,11 @@ div.inform:hover div.info_pic {
 }
 
 .name_pic {
-    font-family: Roboto;
-    font-style: normal;
     font-weight: bold;
     font-size: 24px;
     line-height: 36px;
-    padding: 322px 20px 0px;
+    position: relative;
+    padding: 322px 20px 0;
     color: rgb(255, 255, 255);
 }
 
@@ -371,13 +255,8 @@ div.inform:hover div.info_pic {
 /*Нет постера, но есть текст */
 
 .item-content {
-    /*position: relative;*/
-    width: 302px;
-    height: 454px;
     border-radius: 8px;
-
     background: rgba(255, 255, 255, 0.24);
-    /*overflow: hidden;*/
 
 }
 
@@ -388,8 +267,6 @@ div.inform:hover div.info_pic {
 }
 
 .name {
-    font-family: Roboto;
-    font-style: normal;
     font-weight: bold;
     font-size: 24px;
     line-height: 36px;
@@ -400,9 +277,6 @@ div.inform:hover div.info_pic {
 .meta {
     display: flex;
     justify-content: space-between;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
     font-size: 16px;
     line-height: 24px;
     color: rgba(255, 255, 255, 0.24);
@@ -412,9 +286,6 @@ div.inform:hover div.info_pic {
 }
 
 .date {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
     font-size: 16px;
     line-height: 24px;
     color: rgba(255, 255, 255, 0.24);
@@ -425,10 +296,7 @@ div.inform:hover div.info_pic {
 /*Это нет постера*/
 
 .skeleton {
-    width: 302px;
-    height: 454px;
     border-radius: 8px;
-
     background: rgba(255, 255, 255, 0.24);
 
 }
@@ -457,13 +325,35 @@ div.inform:hover div.info_pic {
     position: relative;
 }
 
-.footer {
+
+.scroll div#search-box {
+    display: block;
+    position: sticky;
+    background: rgba(28, 28, 28, 0.8);
+    backdrop-filter: blur(4px);
+    width: 1440px;
+    top:0;
+    z-index: 1;
+    height: 74px;
+}
+
+.scroll input {
+    background: rgba(28, 28, 28, 0.8);
+    backdrop-filter: blur(4px);
+    width: 1520px;
+    height: 74px;
+    border-bottom: 2px solid #ffffff;
+    padding: 18px 53px 20px 60px;
+    background: url("search_icon.png");
+    background-repeat: no-repeat;
+    background-position: center left;
+}
+
+
+
+/*подвал*/
+.footer_content {
     grid-area: footer;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 14px;
     color: rgba(255, 255, 255, 0.4);
     padding-left: 665px;
     padding-top: 80px;

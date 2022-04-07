@@ -2,13 +2,21 @@
 import {movieCard} from "./modules/movieCard.js";
 import {createHistory} from "./modules/createHistory.js";
 import {errorFunc} from "./modules/errorFunc.js";
+import {countOfSearch} from "./modules/countOfSearch.js";
+import {buttonHistoryFunc, buttonHistoryRemoveFunc, buttonMovieFunc} from "./modules/buttons.js";
 
 const elemResult = document.getElementById('movie_results');
 // const elem = document.querySelector('#search');
+if (localStorage.length === 0) {
+    localStorage.setItem('movies_titles', ['Naruto', 'Titanic']);
+}
 
-const storeMovie = [];
+let storeMovie = localStorage.getItem('movies_titles');
+storeMovie = storeMovie.split(',');
 const store = document.getElementById('history');
-
+createHistory(storeMovie, store);
+buttonHistoryFunc();
+buttonHistoryRemoveFunc();
 document.querySelector('input').addEventListener('keydown', async function(e) {
     if (e.key === "Enter") {
         while (store.firstChild) {
@@ -23,7 +31,11 @@ document.querySelector('input').addEventListener('keydown', async function(e) {
                 `http://www.omdbapi.com/?s=${this.value}&apikey=65a5d248`
             ).then((r) => r.json());
             movieCard(movie, elemResult);
-            createHistory(movie,storeMovie, store);
+            createHistory(storeMovie, store);
+            countOfSearch(movie);
+            buttonMovieFunc(movie, storeMovie);
+            buttonHistoryFunc();
+            buttonHistoryRemoveFunc();
         } catch (e) {
             errorFunc();
         }

@@ -39,7 +39,7 @@
     width: 628px;
     height: 36px;
     padding: 18px 53px 20px 60px;
-    background: url("search_icon.png");
+    background: url("img/search_icon.png");
     background-repeat: no-repeat;
     background-position: center left;
     background-color: #1c1c1c;
@@ -64,12 +64,12 @@
 /*кнопка закрыть*/
 .grid__search input::-webkit-search-cancel-button {
     -webkit-appearance: none;
-    content: url('close.png');
+    content: url('img/close.png');
     cursor: pointer;
 }
 
 .grid__search input::-webkit-search-cancel-button:hover {
-    content: url('close_light.png');
+    content: url('img/close_light.png');
 }
 
 /*изменение search-box. когда активный режим*/
@@ -184,6 +184,7 @@
 .pic {
     width: 302px;
     height: 454px;
+    border-radius: 8px;
 }
 
 
@@ -195,7 +196,9 @@
     position: absolute;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 26.43%, rgba(0, 0, 0, 0.8) 72.41%);
     backdrop-filter: blur(2px);
-    border-radius: 12px;
+    border-radius: 8px;
+
+
 }
 
 .information {
@@ -208,6 +211,8 @@
 }
 div.information:hover div.info_pic {
     display: block;
+    cursor: pointer;
+
 }
 
 .reaction {
@@ -304,7 +309,7 @@ div.information:hover div.info_pic {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 330px 36px 0px 20px;
+    padding: 330px 36px 0 20px;
 
 
 }
@@ -344,7 +349,7 @@ div.information:hover div.info_pic {
     height: 74px;
     border-bottom: 2px solid #ffffff;
     padding: 18px 53px 20px 60px;
-    background: url("search_icon.png");
+    background: url("img/search_icon.png");
     background-repeat: no-repeat;
     background-position: center left;
 }

@@ -1,3 +1,5 @@
+import {countOfSearch} from "./countOfSearch.js";
+
 export function createHistory(movie, storeMovie, store) {
     for (const j of storeMovie) {
         const searchStore = document.createElement('div');
@@ -8,12 +10,7 @@ export function createHistory(movie, storeMovie, store) {
         store.appendChild(searchStore);
     }
 
-
-    const movieCount = document.querySelector('#text-result');
-    if (movie.totalResults % 10 === 1) { movieCount.textContent = 'Нашли ' + movie.totalResults + ' фильм'; }
-    else if (movie.totalResults % 10 === (2 || 3 || 4)) { movieCount.textContent = 'Нашли ' + movie.totalResults + ' фильма'; }
-    else { movieCount.textContent = 'Нашли ' + movie.totalResults + ' фильмов'; }
-
+    countOfSearch(movie);
 
 // при нажатии на иконку фильма переход на его страницу imdb
     const buttonMovie = document.querySelector('#movie_results');

@@ -354,6 +354,11 @@ div.information:hover div.info_pic {
     background-position: center left;
 }
 
+.loader {
+    background: url("dark-loader.gif");
+    margin-left: 610px;
+
+}
 
 
 /*подвал*/

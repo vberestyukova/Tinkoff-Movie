@@ -7,7 +7,7 @@ import {buttonHistoryFunc, buttonHistoryRemoveFunc, buttonMovieFunc} from "./mod
 
 const elemResult = document.getElementById('movie_results');
 
-if (localStorage.length === 0) {
+if ( localStorage.getItem('movies_titles') === null) {
     localStorage.setItem('movies_titles', ['Naruto', 'Titanic']);
 }
 
